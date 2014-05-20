@@ -1,0 +1,74 @@
+'.text.html.handlebars':
+  'Log Helper':
+    'prefix': 'log'
+    'body': """
+      {{log ${1:value}}}
+    """
+  'Debug Helper':
+    'prefix': 'dbg'
+    'body': """
+      {{debugger}}
+    """
+
+'.text.html.handlebars:not(.variable.parameter.handlebars)':
+  'Each Block':
+    'prefix': 'ea'
+    'body': """
+      {{#each}}
+        $3
+      {{/each}}
+    """
+  'Each Item Block':
+    'prefix': 'each'
+    'body': """
+      {{#each ${1:item}}}
+        $3
+      {{/each}}
+    """
+    
+  'If Block':
+    'prefix': 'if'
+    'body': """
+      {{#if ${1:true}}}
+        $2
+      {{/if}}
+    """
+  'Else Block':
+    'prefix': 'else'
+    'body': """
+      {{else}}
+    """
+  'If/Else Block':
+    'prefix': 'ifel'
+    'body': """
+      {{#if ${1:true}}}
+        $2
+      {{else}}
+        $3
+      {{/if}}
+    """
+
+  'Unless Block':
+    'prefix': 'unl'
+    'body': """
+      {{#unless${1: item}}}
+        $2
+      {{/unless}}
+    """
+  'Unless/Else Block':
+    'prefix': 'unlel'
+    'body': """
+      {{#unless ${1:true}}}
+        $2
+      {{else}}
+        $3
+      {{/unless}}
+    """
+
+  'With Block':
+    'prefix': 'with'
+    'body': """
+      {{#with ${1:item} ${2:as ${3:value}}}}
+        $4
+      {{/with}}
+    """
